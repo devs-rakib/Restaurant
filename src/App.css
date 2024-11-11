@@ -1,38 +1,977 @@
-.App {
+/* @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+:root {
+  --main-primary:#B52B1D;
+  --main-secondary:#FEBF00;
+  --main-tertiary:#FBF7F2;
+  --text-dark:#181818;
+  --text-light:#F7F8F9;
+  --white: #FFF;
+  --font-family-bebas-neue: "Bebas Neue", sans-serif;
+  --font-family-roboto: "Roboto", sans-serif;
+  --font-family-raleway: "Raleway", sans-serif;
+}
+
+/*=======================================================================
+[01] Typography
+=========================================================================*/
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  overflow-x: hidden;
+  font-family: var(--font-family-bebas-neue); 
+  font-family: var(--font-family-roboto);
+  font-family: var(--font-family-raleway);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  outline: none;
+  -moz-osx-font-smoothing: grayscale;
+  /* Firefox */
+  -webkit-font-smoothing: antialiased;
+  /* WebKit  */ 
+}
+
+body {
+  margin: 0;
+  /* font-family: var(--font-family-manrope);  */
+  background-color: var(--white);
+  font-size: 1.2rem;
+  color: var(--text-dark);
+}
+
+h1 {
+  font-family: var(--font-family-bebas-neue);
+  font-size: 120px !important;
+  font-weight: 700 !important;
+  line-height: 130px !important;
+}
+
+h2 {
+  font-family: var(--font-family-bebas-neue);
+  font-size: 62px !important;
+  font-weight: 700 !important;
+  line-height: 62px !important;
+}
+
+h3 {
+  font-family: var(--font-family-bebas-neue);
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 36px;
+}
+
+h4 {
+  font-family: var(--font-family-bebas-neue);
+  font-size: 24px !important ;
+  font-weight: 700 !important;
+  line-height: 36px !important;
+}
+h5 {
+  font-family: var(--font-family-roboto);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 32px;
+}
+
+h6 {
+  font-family: var(--font-family-bebas-neue);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 19.98px;
+}
+h1,
+h2,h3,h4{
+  margin-bottom: 0;
+}
+
+
+button,a,input, optgroup, select, textarea{
+  font-family: var(--font-family-roboto);
+}
+
+/*=======================================================================
+[02] General
+=========================================================================*/
+
+#wrapper {
+overflow: hidden;
+}
+
+li,
+ol,
+small,
+span,
+strong,
+a,
+p {
+  font-family: var(--font-family-roboto);
+}
+a,
+a:hover {
+color: var(--text-dark);
+}
+img {
+  max-width: 100%; 
+}
+ol, li {
+  list-style: none;
+}
+
+a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none !important;
+  outline: none;
+}
+p,
+ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+p{
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 32px;
+  text-align: left;
+  color: var(--text-dark);
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -ms-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+ol, ul {
+padding-left: 0;
+}
+li{
+font-size: 16px;
+font-weight: 700;
+line-height: 26px;
+text-transform: capitalize;
+}
+
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+svg {
+  width: 40px;
+  height: 40px;
+  padding: 5px;
+  border: 1px solid var(--white);
+  border-radius: 50%;
+  color: var(--white);
+  fill: var(--white);
+  cursor: pointer;
+  transition: all 0.5s ease-out;
+}
+svg:hover {
+  color: var(--main-secondary);
+  fill: var(--main-secondary);
+  border: 1px solid var(--main-secondary);
+}
+
+/*input and button type focus outline disable*/
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="number"]:focus,
+input[type="button"]:focus,
+input[type="reset"]:focus,
+input[type="submit"]:focus,
+input:focus,
+textarea:focus,
+select:focus {
+-webkit-box-shadow: none;
+box-shadow: none;
+}
+.form-select:focus ,
+.form-control:focus
+{
+-webkit-box-shadow: none;
+box-shadow: none;
+}
+.d-flex {
+  display: -webkit-box !important;
+  display: -webkit-flex !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+}
+.text-align-justify{
+  text-align: justify;
+}
+
+.row.no-gutters > [class^="col-"],
+.row.no-gutters > [class*=" col-"] {
+  padding-right: 0;
+  padding-left: 0;
+}
+.w-fit {
+  width: fit-content;
+}
+.h-100 {
+  height: 100%;
+}
+.w-100 {
+  width: 100%;
+}
+.section-space {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+
+.mb-10 {
+  margin-bottom: 10px;
+}
+.mb-16 {
+  margin-bottom: 16px;
+}
+.mb-20 {
+  margin-bottom: 20px;
+}
+.mb-30 {
+  margin-bottom: 30px;
+}
+.mb-40 {
+  margin-bottom: 40px;
+}
+.mb-50 {
+  margin-bottom: 50px;
+}
+.mb-60 {
+  margin-bottom: 60px;
+}
+.mb-70 {
+  margin-bottom: 70px;
+}
+
+
+
+.pt-75 {
+  padding-top: 75px;
+}
+
+
+.btn-fill {
+  background: var(--main-secondary);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+  color: var(--text-dark);
+  padding: 14px 32px;
+  border: none;
+  display: inline-block;
+  overflow: hidden;
+  text-transform: uppercase;
+  /* -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out; */
+  transition: all 5s ease;
+  transition:background, 2s;
+}
+.btn-fill:hover {
+  background: var(--main-tertiary);
+}
+.cursor-Pointer{
+  cursor: pointer;
+}
+
+.z-index {
+  z-index: 99;
+  position: relative;
+}
+
+/*=======================================================================
+[03] Header Area Start Hear
+=========================================================================*/
+.logo-area {
+  line-height: normal;
+}
+.main-menu-area .nav-menu-box {
+  border-left: 4px solid var(--orange-dark);
+}
+
+.main-menu-area nav ul li {
+  display: inline-block;
+  position: relative;
+}
+.main-menu-area nav ul li a {
+  padding-right: 27px;
+  display: block;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 26px;
+  color: var(--white);
+  text-transform: capitalize;
+  -webkit-transition: all 1s ease-out;
+  -moz-transition: all 1s ease-out;
+  -ms-transition: all 1s ease-out;
+  -o-transition: all 1s ease-out;
+  transition: all 1s ease-out;
+}
+.main-menu-area nav ul li a:hover{
+  color: var(--main-secondary);
+}
+.side-menu {
+  position: absolute;
+  right: -400px;
+  top: 0;
+  width: 400px;
+  height: 100vh;
+  padding: 30px;
+  background-color: var(--main-secondary);
+  transition: all 0.5s ease-in-out;
+}
+.side-menu-active {
+  right: 0px;
+}
+
+.bar-img {
+  margin-left: 12px;
+  
+}
+.header {
+  position: relative;
+  width: 100%;
+  z-index: 99999;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  background-color:var(--main-primary); /* Change color when sticky, if desired */
+  
+}
+.header-fixed {
+  height: 75px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  top: 0;
+  z-index: 100;
+  /* position: fixed; */
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -ms-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+.header .main-menu-area{
+  justify-content: center;
+  align-items: center;
+  height: 75px;
+}
+.hamburger div{
+  width: 30px;
+  height:3px;
+  background: var(--white);
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+.hamburger,
+#dropdown .close-btn{
+  display: none;
+}
+
+/*=======================================================================
+[04] Hero Area Start Hear
+=========================================================================*/
+.hero {
+  background-image: url(../src/Images/Hero-bg.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: var(--main-primary);
+}
+.hero-content .entry-content .entry-title {
+  position: relative;
+  white-space: nowrap;
+  z-index: 3;
+  padding: 16px 16px 16px 0;
+  color: var(--white);
+}
+.hero-content .entry-content .entry-title::after{
+  position: absolute;
+  top: 0;
+  right: 0;
+  content: "";
+  width: 30%;
+  height: 100%;
+  background: var(--main-primary);
+  Opacity: 40%;
+  /* border-radius: 15px; */
+  z-index: -1;
+}
+.hero-content .entry-content .text{
+ color: var(--white);
+}
+.hero-content .bannerImg {
+  margin-left: -200px;
+  position: relative;
+}
+.hero-content .bannerImg::after {
+  content: "";
+  background-image: url(../src/Images/Star.svg);
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  margin: 0 auto;
+  text-align: center;
+  z-index: 1;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  top: 0px;
+  right: 0px;
+}
+.hero-content .order {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: var(--main-secondary);
+  margin: auto;
+  position: absolute;
+  bottom: 0;
+  right: -110px;
+  padding: 5px;
+}
+.hero-content .order strong{
+  font-family: var(--font-family-bebas-neue);
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 36px;
+  width: 100%;
+  height: 100%;
+  border: 1px dashed var(--main-primary);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+}
+/*=======================================================================
+[05] About Area Start Hear
+=========================================================================*/
+.about::after {
+  position: absolute;
+  content: '';
+  width: 200px;
+  height: 200px;
+  bottom: 120px;
+  right: -50px;
+  background-image: url(./Images/top-view-bell-pepper.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+.card-box {
+  position: absolute !important;
+  top: 10px;
+  left: 20px;
+  /* width: 180px; */
+  padding: 20px;
+  border-radius: 15px;
+  background-color: var(--white);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* flex-direction: column; */
+  gap: 20px;
+}
+
+
+/* Circular progress bar styling */
+.circle {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: conic-gradient(#fdb813 0% 75%, #e0e0e0 75% 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Grey background for circle progress */
+.circle::before {
+  content: "";
+  position: absolute;
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background-color: var(--white);
+}
+.circle:after {
+content: "";
+width: 10px;
+height: 10px;
+background: #ddd;
+position: absolute;
+border-radius: 100px;
+top: 30px;
+left: -1px;
+/* transform: translate(20px, -6%); */
+border: 5px solid #fdb812;
+}
+/* Number inside circle styling */
+.circle-text {
+  position: absolute;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 30.16px;
+  color: var(--text-dark);  
+}
+
+/* Text styling */
+.text {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 23.6px;
+  color: var(--text-dark);
+  
+}
+.tab-content nav .tab-list{
+  border-bottom: 1px solid var(--main-primary);
+
+}
+.tab-content nav .tab-list button{
+  border: none;
+  background-color: transparent;
+  color: var(--text-dark);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px;
+
+}
+.tab-content nav .tab-list .active-tabs{
+ background-color: var(--main-primary);
+  color: var(--white);
+}
+.tab-content .tab-item .text {
+  color: var(--text-dark);
+}
+.tab-content .tab-item .tab-number span {
+  font-family: var(--font-family-roboto);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+  margin-left: 5px;
+  color: var(--text-dark) !important;
+  
+}
+.tab-content .tab-item .tab-number .phone-icon {
+  fill: var(--main-primary) !important;
+  margin-left: 30px;
+  border: none;
+
+}
+.service-items .service-list img {
+  width: 60px;
+  height: 60px;
+  padding: 10px;
+  border-radius: 50%;
+  box-shadow: 0px 7px 16px 0px #0000001A;
+
+}
+.service-items .service-list .service-content {
+  margin-left: 16px;
+}
+.service-items .service-list .service-content p {
+  color: var(--text-dark);
+  font-size: 20px;
+  margin: 0;
+}
+
+/*=======================================================================
+[06] Slider Area Start Hear
+=========================================================================*/
+.food-item {
+  background-color: var(--main-tertiary);
+}
+.section-title h5 {
+  color: var(--main-primary);
+  margin-left: 17px;
+}
+.section-title h5::after {
+  content: "";
+  background-color: var(--main-primary);
+  width: 8px;
+  height: 8px;
+  position: absolute;
+  bottom: 8px;
+  left: -16px;
+  margin: 0 auto;
+  text-align: center;
+  z-index: 1;
+}
+.slider-items .slider-list {
+  background-color: var(--white);
+  padding: 16px;
+}
+.slider-items .slider-list .bar img {
+  width: 120px;
+  height: 120px;
+}
+.slider-items .slider-list .bar::after{
+  content: "";
+  background-color: var(--main-primary);
+  width: 60px;
+  height: 4px;
+  position: absolute;
+  bottom: 0px;
+  left: 42%;
+  margin: 0 auto;
+  text-align: center;
+  z-index: 1;
+}
+.splide__arrow {
+  width: 3rem !important;
+  height: 3rem !important;
+  top: -35% !important;
+  right: 0 !important;
+  box-shadow: 0px 0px 13.64px 0px rgba(0, 0, 0, 0.1);
+  background-color: var(--white) !important;
+}
+.splide__arrow--prev {
+  left: inherit !important;
+  right: 4rem !important;
+}
+.splide__arrow svg {
+  height: 30px !important;
+  width: 30px !important;
+  border: none;
+  fill: var(--main-primary);
+}
+.splide__arrow :hover {
+}
+.splide__arrow:disabled svg{
+  opacity: 1 !important;
+  fill: var(--text-dark) !important;
+}
+/*=======================================================================
+[07] Booking Area Start Hear
+=========================================================================*/
+.booking {
+  background-image: url('./Images/Booking.jpg');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.booking .section-title h2,
+.booking .section-title p {
+  color: var(--white);
+}
+
+.form-control {
+  background-color: var(--text-dark) !important;
+  border-radius: 0 !important;
+  border: 1px solid var(--main-tertiary);
+  color: var(--white) !important;
+}
+.form-control :-ms-input-placeholder {
+  color: var(--white);
+}
+input {
+  color-scheme: dark !important;
+}
+input::placeholder {
+  color: var(--text-light) !important;
+  opacity: .75 !important;
+}
+textarea::placeholder {
+  color: var(--text-light) !important;
+  opacity: .75 !important;
+}
+input::-webkit-calendar-picker-indicator {
+  color: var(--text-light) !important;
+  opacity: 1
+}
+
+/*=======================================================================
+[08] Testimonial Area Start Hear
+=========================================================================*/
+.client-comment {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--main-secondary);
+}
+.client-comment::before {
+  content: "";
+  background-image: url(./Images/Stroke.svg);
+  background-repeat: no-repeat;
+  width: 80px;
+  height: 100px;
+  position: absolute;
+  bottom: 50px;
+  left: 0;
+  margin: 0 auto;
+  text-align: center;
+  z-index: 1;
+}
+.client-comment .comment-box {
+  padding:0 100px;
+  flex-basis: 50%;
+}
+.client-comment .comment-box p{
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 34px;
+
+}
+.client-comment .video {
+  flex-basis: 50%;
+}
+.client-comment .comment-box .user {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--text-dark);
+}
+.client-comment .comment-box .user .picture::after{
+  content: "";
+  background-color: var(--main-primary);
+  width: 40px;
+  height: 4px;
+  position: absolute;
+  bottom: -21px;
+  left: 0;
+  margin: 0 auto;
+  text-align: center;
+  z-index: 1;
+}
+.client-comment .video .video-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: var(--text-dark);
+  fill: var(--text-dark);
+  border: none;
+  padding: 10px;
+  background: var(--main-secondary);
+}
+
+/*=======================================================================
+[09] Footer Area Start Hear
+=========================================================================*/
+footer {
+  /* background-image: url(''); */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(./Images/Footer-bg.jpg);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.footer-content h2 {
+  color: var(--white);
+  text-align: center;
+}
+.contact-info {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.contact-info .contact-info-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+.contact-info .contact-info-list h4,
+.contact-info .contact-info-list p {
+  color: var(--white);
+}
+
+.social-content .social-icon {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+}
+.social-content .social-icon img{
+  border: 1px solid var(--text-light);
+  border-radius: 50%;
+  padding: 8px;
+}
+.social-content p {
+  color: var(--white);
+  text-align: center;
+  font-size: 24px;
+  font-weight: 400;
+}
+.social-content p span{
+  color: var(--main-secondary);
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/*=======================================================================
+[10] Responsive Area Start Hear
+=========================================================================*/
+
+@media only screen and (max-width: 991px) {
+  h1 {
+    font-size: 90px !important;
+    line-height: 90px !important;
+  }
+  .section-space {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+}
+@media only screen and (max-width: 768px) {
+  h1 {
+    font-size: 70px !important;
+    line-height: 75px !important;
+  }
+  h2 {
+    font-size: 50px !important;
+    font-weight: 700!important;
+    line-height: 58px !important;
+
+  }
+  .section-space {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+.mb-60 {
+  margin-bottom: 30px;
+}
+}
+@media only screen and (max-width: 570px) {
+  h1 {
+    font-size: 48px !important;
+    line-height: 56px !important;
+  }
+  h2 {
+    font-size: 40px !important;
+    font-weight: 700 !important;
+    line-height: 48px !important;
+
+  }
+  .section-space {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+}
+@media only screen and (max-width: 991px) {
+  .header-fixed {
+    height: 75px;
+  }
+  #dropdown{
+    position: fixed;
+    z-index: 3;
+    top: -100vh;
+    background-color: var(--main-secondary);
+    height: 100vh;
+    width: 50%;
+    right: 0;
+  }
+  .hamburger{
+      display:block;
+      position: absolute;
+      cursor: pointer;
+      right: 5%;
+      top: 50%;
+      transform: translate(-5%, -50%);
+      z-index: 2;
+      transition: all 0.7s ease;
+  }
+  .responsive_nav {
+    transform: translateY(100vh);
+
+  }
+  #dropdown ul {
+    flex-direction: column;
+      transition: all 1s ease-out;
+      pointer-events: none;
+      padding-top: 50px;
+      align-items: center;
+      gap: 20px;
+  }
+  
+  #dropdown .close-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+    display: block;
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    color: var(--main-primary);
+    border: none !important;
+  }
+  #dropdown .close-btn:hover {
+    color: var(--main-primary) !important;
+    fill: var(--main-primary) !important;
+  }
+  /* Nav bar End */
+  /* Hero Start */
+
+  
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media only screen and (max-width: 1200px) {
+  .hero-content {
+    flex-direction: column;
+  }
+  .hero-content .entry-content .entry-title::after {
+    background-color: transparent;
+  }
+  .hero-content .bannerImg{
+    margin-left: 0;
+  }
+  .hero-content .order {
+    right: 120px;
+  }
+  .hero-content .entry-content .entry-title {
+    padding: 0;
   }
 }
+@media only screen and (max-width: 991px) {
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  .hero-content .order {
+    right: 10px;
+    width: 100px;
+    height: 100px;
   }
-  to {
-    transform: rotate(360deg);
+  .hero-content .order strong{
+    font-size: 21.6px;
+    font-weight: 700;
+    line-height: 21.6px;
+
+  }
+  .service-items{
+    gap: 20px;
+  }
+  .client-comment{
+    flex-direction: column-reverse;
+  }
+  .client-comment .comment-box{
+    padding: 30px;
+  }
+  .client-comment::before {
+    bottom: -22px !important;
   }
 }
