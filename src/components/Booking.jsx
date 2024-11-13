@@ -6,10 +6,7 @@ import { useForm } from "react-hook-form";
 function Booking() {
     const { register, handleSubmit } = useForm();
     const [data, setData] = useState("");
-
-
-
-
+    
   return (
     <div className='booking'>
         <div className="container">
@@ -21,8 +18,8 @@ function Booking() {
                     molestie vel, ornare non id blandit netus.</p>
                 </div>
                 <div className="col-lg-6 col-md-8 col-12">
-                    {/* <form class="row g-3" onSubmit={handleSubmit((data) => setData(JSON.stringify(data)))}> */}
-                    <form class="row g-3" onSubmit={handleSubmit((data) => console.log(data))}>
+                    <form class="row g-3" onSubmit={handleSubmit((data) => setData(JSON.stringify(data)))}>
+                    {/* <form class="row g-3" onSubmit={handleSubmit((data) => console.log(data))}> */}
                         <div class="col-md-6">
                             <input {...register("name")} type="name" class="form-control" id="name" placeholder='Your Name'/>
                         </div>

@@ -12,18 +12,32 @@ function Food() {
 
 
   return (
-    <div className='food-item'>
+    <div className='food-item position-relative'>
       <div className="container">
         <div className="section-space">
           <div className="section-title mb-60">
             <h5 className='mb-20 position-relative'>Crispy, Every Bite Taste</h5>
             <h2>POPULAR FOOD ITEMS</h2>
           </div>
-          <Splide
+          <Splide className='food-slider'
             options={{
               type: 'loop',                // Enables continuous looping
               gap: '1rem',                  // Gap between slides
-              perPage: 3,                   // Number of slides visible at once
+              perPage: 3, 
+              breakpoints: {
+                1024: {
+                  perPage: 3,
+                 
+                },
+                767: {
+                  perPage: 2,
+              
+                },
+                640: {
+                  perPage: 1,
+            
+                },
+                                },                  // Number of slides visible at once
               autoplay: true,               // Enables autoplay
               pauseOnHover: false,          // Avoids pausing on hover
               pauseOnFocus: false,          // Avoids pausing on focus

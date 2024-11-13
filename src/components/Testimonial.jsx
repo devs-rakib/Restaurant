@@ -19,32 +19,32 @@ function Testimonial() {
       setShowPopup(false);
     };
   return (
-    <div className='testimonial'>
+    <div className='testimonial position-relative'>
         <div className="container">
             <div className="section-space">
             <div className="section-title mb-60">
-                    <h5 className='mb-20 position-relative'>Crispy, Every Bite Taste</h5>
-                    <h2>What Some of my Customers Say</h2>
+                    <h5 className='mb-20 position-relative z-index'>Crispy, Every Bite Taste</h5>
+                    <h2 className='z-index d-inline-block'>What Some of my Customers Say</h2>
                 </div>
-                <Splide
+                <Splide className="testimonial-slider"
                     options={{
-                    // type: 'loop',                // Enables continuous looping
-                    gap: '1rem',                  // Gap between slides
-                    perPage: 1,                   // Number of slides visible at once
-                    autoplay: false,               // Enables autoplay
-                    pauseOnHover: false,          // Avoids pausing on hover
-                    pauseOnFocus: false,          // Avoids pausing on focus
-                    resetProgress: false,         // Prevents resetting the progress
-                    arrows: true,                // Hides navigation arrows
-                    pagination: false,            // Hides pagination dots
-                    // autoScroll: { speed: 2 },     // Speed of auto-scroll
+                        type: 'loop',                // Enables continuous looping
+                        gap: '1rem',                  // Gap between slides
+                        perPage: 1,                  // Number of slides visible at once
+                        autoplay: false,               // Enables autoplay
+                        pauseOnHover: true,          // Avoids pausing on hover
+                        pauseOnFocus: false,          // Avoids pausing on focus
+                        resetProgress: false,         // Prevents resetting the progress
+                        arrows: true,                // Hides navigation arrows
+                        pagination: false,            // Hides pagination dots    // Speed of auto-scroll
                     }}
-                    // extensions={{ AutoScroll }}
                 >
                     <SplideSlide className='slider-items'>
                         <div className="client-comment position-relative">
                             <div className="comment-box">
+                            <blockquote className='responsive-quote position-relative'>
                                 <p className='mb-40'>You can't go wrong with Chicken Mandi, I had it twice. The chicken was cooked perfectly, juicy & soft (usually mandi chicken is a bit dry). I would defiantly recommend it.</p>
+                            </blockquote>
                                 <div className="user">
                                     <div className="user-name">
                                         <h5>Khalid Al Dawsry</h5>

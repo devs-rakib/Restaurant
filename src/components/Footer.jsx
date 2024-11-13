@@ -34,8 +34,8 @@ function Footer() {
                         <div className="contact-info-list">
                             <img className='mb-16' src={LocationIcon} alt="icon" />
                             <h4>BOOK A TABLE</h4>
-                            <p className='text-center'>Email: demo@website.com <br/>
-                            Support: support@website.com</p>
+                            <p className='text-center'><a href="mailto:webmaster@example.com">Email: demo@website.com </a><br/>
+                            <a href="mailto:webmaster@example.com">Support: support@website.com </a></p>
                         </div>
                         <div className="contact-info-list">
                             <img className='mb-16' src={MailIcon} alt="icon" />
@@ -51,7 +51,7 @@ function Footer() {
                             <CiInstagram />
                             <FaLinkedinIn />
                         </div>
-                        <p>© 2023 <span>Niomax</span> All Rights Reserved </p>
+                        <p>© 2023 <a href='#'>Niomax</a> All Rights Reserved </p>
                     </div>
                 </div>
             </div>
